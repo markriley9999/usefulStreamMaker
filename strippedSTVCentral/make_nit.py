@@ -108,8 +108,10 @@ nit = network_information_section(
 	network_id = 0x3048,
 
     network_descriptor_loop = [
-        network_descriptor(network_name = "Central Scotland"),
-        network_descriptor(URI_linkage = "https://auth-ctv.digitaluk.co.uk"),
+        network_descriptor(
+		network_name = "Central Scotland",
+        	URI_linkage = "https://auth-ctv.digitaluk.co.uk"
+	),
     ],
             
          
