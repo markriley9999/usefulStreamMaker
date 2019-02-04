@@ -1,0 +1,90 @@
+--- Scottish Stream ---
+
+Remove 
+
+- PAT
+- NIT
+- SDT
+
++-pid: 0x0 (0) => PAT
++-pid: 0x10 (16) => NIT
++-pid: 0x11 (17) => SDT/BAT
++-pid: 0x44C (1100) => PMT for service:8384 (Channel 4)
++-pid: 0x44D (1101) => Channel 4 ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or ISO/IEC 11172-2 constrained parameter video stream, PCR for 8384 (Channel 4)
++-pid: 0x44E (1102) => Channel 4 ISO/IEC 13818-3 Audio
++-pid: 0x44F (1103) => Channel 4 ISO/IEC 13818-3 Audio
++-pid: 0x46B (1131) => Channel 4 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES packets containing private data DVB subtitling
++-pid: 0x4B0 (1200) => PMT for service:8452 (Channel 4+1)
++-pid: 0x4B1 (1201) => Channel 4+1 ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or ISO/IEC 11172-2 constrained parameter video stream, PCR for 8452 (Channel 4+1)
++-pid: 0x4B2 (1202) => Channel 4+1 ISO/IEC 13818-3 Audio
++-pid: 0x4B3 (1203) => Channel 4+1 ISO/IEC 13818-3 Audio
++-pid: 0x4CF (1231) => Channel 4+1 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES packets containing private data DVB subtitling
++-pid: 0x514 (1300) => PMT for service:8448 (E4)
++-pid: 0x515 (1301) => E4 ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or ISO/IEC 11172-2 constrained parameter video stream, PCR for 8448 (E4)
++-pid: 0x516 (1302) => E4 ISO/IEC 13818-3 Audio
++-pid: 0x517 (1303) => E4 ISO/IEC 13818-3 Audio
++-pid: 0x533 (1331) => E4 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES packets containing private data DVB subtitling
++-pid: 0x578 (1400) => PMT for service:8442 (More 4)
++-pid: 0x579 (1401) => More 4 ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or ISO/IEC 11172-2 constrained parameter video stream, PCR for 8442 (More 4)
++-pid: 0x57A (1402) => More 4 ISO/IEC 13818-3 Audio
++-pid: 0x57B (1403) => More 4 ISO/IEC 13818-3 Audio
++-pid: 0x597 (1431) => More 4 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES packets containing private data DVB subtitling
++-pid: 0x5DC (1500) => PMT for service:8385 (Film4)
++-pid: 0x5DD (1501) => Film4 ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or ISO/IEC 11172-2 constrained parameter video stream, PCR for 8385 (Film4)
++-pid: 0x5DE (1502) => Film4 ISO/IEC 13818-3 Audio
++-pid: 0x5DF (1503) => Film4 ISO/IEC 13818-3 Audio
++-pid: 0x5FB (1531) => Film4 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES packets containing private data DVB subtitling
++-pid: 0x640 (1600) => PMT for service:8500 (Channel 5)
++-pid: 0x641 (1601) => Channel 5 ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or ISO/IEC 11172-2 constrained parameter video stream, PCR for 8500 (Channel 5)
++-pid: 0x642 (1602) => Channel 5 ISO/IEC 13818-3 Audio
++-pid: 0x643 (1603) => Channel 5 ISO/IEC 13818-3 Audio
++-pid: 0x65F (1631) => Channel 5 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES packets containing private data DVB subtitling
+
++-pid: 0x708 (1800) => PMT for service:8325 (ITV2)
++-pid: 0x709 (1801) => ITV2 ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or ISO/IEC 11172-2 constrained parameter video stream, PCR for 8325 (ITV2)
++-pid: 0x70A (1802) => ITV2 ISO/IEC 13818-3 Audio
++-pid: 0x70B (1803) => ITV2 ISO/IEC 13818-3 Audio
++-pid: 0x727 (1831) => ITV2 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES packets containing private data DVB subtitling
++-pid: 0x7D0 (2000) => PMT for service:8330 (ITV4)
++-pid: 0x7D1 (2001) => ITV4 ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or ISO/IEC 11172-2 constrained parameter video stream, PCR for 8330 (ITV4)
++-pid: 0x7D2 (2002) => ITV4 ISO/IEC 13818-3 Audio
++-pid: 0x7D3 (2003) => ITV4 ISO/IEC 13818-3 Audio
++-pid: 0x7EF (2031) => ITV4 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES packets containing private data DVB subtitling
++-pid: 0x898 (2200) => E4 ISO/IEC 13818-6 type B/Film4 ISO/IEC 13818-6 type B/Channel 4+1 ISO/IEC 13818-6 type B/More 4 ISO/IEC 13818-6 type B
++-pid: 0xBB9 (3001) => Channel 4 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 private_sections Related Content Table (RCT)
++-pid: 0xBBA (3002) => Channel 4+1 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 private_sections Related Content Table (RCT)
++-pid: 0xBBB (3003) => E4 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 private_sections Related Content Table (RCT)
++-pid: 0xBBC (3004) => More 4 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 private_sections Related Content Table (RCT)
++-pid: 0xBBD (3005) => Film4 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 private_sections Related Content Table (RCT)
++-pid: 0x1F40 (8000) => E4 ISO/IEC 13818-6 type B/More 4 ISO/IEC 13818-6 type B
+
+
+
+
+
+
+
+
+Remaining PIDs
++-pid: 0x1 (1) => CAT
++-pid: 0x12 (18) => EIT
++-pid: 0x14 (20) => TOT/TDT
++-pid: 0x6A4 (1700) => PMT for service:8273 (STV)
++-pid: 0x6A5 (1701) => STV ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or ISO/IEC 11172-2 constrained parameter video stream, PCR for 8273 (STV)
++-pid: 0x6A6 (1702) => STV ISO/IEC 13818-3 Audio
++-pid: 0x6A7 (1703) => STV ISO/IEC 13818-3 Audio
++-pid: 0x6C3 (1731) => STV ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES packets containing private data DVB subtitling
++-pid: 0x76C (1900) => PMT for service:8373 (STV+1)
++-pid: 0x76D (1901) => STV+1 ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or ISO/IEC 11172-2 constrained parameter video stream, PCR for 8373 (STV+1)
++-pid: 0x76E (1902) => STV+1 ISO/IEC 13818-3 Audio
++-pid: 0x76F (1903) => STV+1 ISO/IEC 13818-3 Audio
++-pid: 0x78B (1931) => STV+1 ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES packets containing private data DVB subtitling
++-pid: 0x1FFF (8191) => NULL Packets (Stuffing)
+
+
+
+Recreate 
+
+PAT
+NIT
+SDT
