@@ -92,6 +92,7 @@ from dvbobjects.HBBTV.Descriptors import *
         # +-descriptor_length: 0x4 (4)
         # +-descriptor_data: 0x0000233A "..#:"
         # +-private_data_specifier: 0x233A (9018) => Independent Television Commission
+
       # +-Descriptor: extension descriptor (URI_linkage_descriptor): 0x7F (127)
         # +-descriptor_tag: 0x7F (127) => extension descriptor (URI_linkage_descriptor)
         # +-descriptor_length: 0x23 (35)
@@ -107,7 +108,8 @@ nit = network_information_section(
 	network_id = 0x3048,
 
     network_descriptor_loop = [
-        network_descriptor(network_name = "Central Scotland"), 
+        network_descriptor(network_name = "Central Scotland"),
+        network_descriptor(URI_linkage = "https://auth-ctv.digitaluk.co.uk"),
     ],
             
          
