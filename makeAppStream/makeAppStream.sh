@@ -57,11 +57,16 @@ python ./make_ait.py "3431" "115" "http://ec2-35-176-80-199.eu-west-2.compute.am
 
 
 
+tsmask ~/source/Suitest_Channel.ts \
+    -0 \
+    -16 \
+    -17 \
+    > tmp/suitest_stripped.ts
 
     
 # bitrate: 0xAE7E6C (11435628)
 tscbrmuxer \
-    c:11435628 ~/source/Suitest_Channel.ts \
+    c:11435628 ~/tmp/suitest_stripped.ts \
     b:3008 tmp/nit.ts \
     b:3008 tmp/pat.ts \
     b:1500 tmp/sdt.ts \
