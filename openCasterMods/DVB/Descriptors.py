@@ -1216,12 +1216,14 @@ class URI_linkage_descriptor(Descriptor):
     def bytes(self):
 	
 	descriptor_tag_extension = 0x13
-	
-	fmt = "!BB%ds" % len(self.URI_linkage)
+	uri_linkage_type = 0x80
+
+	fmt = "!BBB%ds" % len(self.URI_linkage)
 	
 	return pack(fmt,
 		descriptor_tag_extension,
-        len(self.URI_linkage),
+		uri_linkage_type,
+        	len(self.URI_linkage),
 		self.URI_linkage,
 	)
 
