@@ -13,7 +13,7 @@ from dvbobjects.HBBTV.Descriptors import *
 
 pat = program_association_section(
 
-        # Transport Stream 1000
+        # Transport Stream 0x1000
     # +-TableType: program_association_section (0/0)
       # +-table_id: 0x0 (0) => program_association_section
       # +-section_syntax_indicator: 0x1 (1)
@@ -27,7 +27,7 @@ pat = program_association_section(
       # +-private_data: 0x0001E0C80002E12C0E00EC1C0E01EC1C2051E6A420B5E76CF3F094E8 ".......,........ Q.. ..l...."
 
 
-    transport_stream_id = 1000,
+    transport_stream_id = 0x1000,
 
     # +-programs: 6 entries
     program_loop = [

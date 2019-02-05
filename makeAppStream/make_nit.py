@@ -11,7 +11,7 @@ from dvbobjects.HBBTV.Descriptors import *
 
 
 # NIT
-# +-network_id: 0x3048 (12360) => Central Scotland
+# +-network_id: 12336 => London
   # +-TableType: network_information_section - actual_network (0/1)
     # +-table_id: 0x40 (64) => network_information_section - actual_network
     # +-section_syntax_indicator: 0x1 (1)
@@ -104,10 +104,10 @@ from dvbobjects.HBBTV.Descriptors import *
   
 nit = network_information_section(
 
-	network_id = 0x3048,
+	network_id = 12336,
 
     network_descriptor_loop = [
-        network_descriptor(network_name = "Central Scotland"), 
+        network_descriptor(network_name = "London"), 
     ],
             
          
@@ -122,7 +122,7 @@ nit = network_information_section(
             # +-original_network_id: 0x233A (9018) => UK Digital Terrestrial Television
             # +-transport_descriptors_length: 0x41 (65)
 
-            transport_stream_id = 0x2011,
+            transport_stream_id = 0x1000,
             original_network_id = 0x233A,
 
             # +-transport_descriptors: 4 entries
