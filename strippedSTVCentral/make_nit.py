@@ -109,9 +109,11 @@ nit = network_information_section(
 
     network_descriptor_loop = [
         network_descriptor(
-		network_name = "Central Scotland",
-        	URI_linkage = "https://auth-ctv.digitaluk.co.uk"
-	),
+            network_name = "Central Scotland",
+        ),
+        URI_linkage_descriptor(
+        	URI_linkage = "https://auth-ctv.digitaluk.co.uk"        
+        ),
     ],
             
          
