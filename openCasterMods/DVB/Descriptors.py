@@ -1209,6 +1209,23 @@ class supplementary_audio_descriptor(Descriptor):
 	)
 
 ######################################################################
+class URI_linkage_descriptor(Descriptor):
+
+    descriptor_tag = 0x7F
+    
+    def bytes(self):
+	
+	descriptor_tag_extension = 0x13
+	
+	fmt = "!BB%ds" % len(self.URI_linkage)
+	
+	return pack(fmt,
+		descriptor_tag_extension,
+        len(self.URI_linkage),
+		self.URI_linkage,
+	)
+
+######################################################################
 class private_data_descriptor(Descriptor):
 
     descriptor_tag = 0x0F
