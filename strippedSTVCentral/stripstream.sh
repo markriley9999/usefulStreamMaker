@@ -67,10 +67,9 @@ python ./make_pat.py
 python ./make_sdt.py
 
 
-
-# bitrate: 0x1702BE6 (24128486)
+# bitrate: 0x517D03 (5340419)
 tscbrmuxer \
-    c:24128486 tmp/stripped.ts \
+    c:5340419 tmp/stripped.ts \
     b:3008 tmp/nit.ts \
     b:3008 tmp/pat.ts \
     b:1500 tmp/sdt.ts \

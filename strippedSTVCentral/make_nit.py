@@ -181,28 +181,6 @@ nit = network_information_section(
                 
                     lcn_service_descriptor_loop = [
 
-                      # +-logical_channel (the.suite.st): 781
-                        # +-service_id: 0x1 (1)
-                        # +-reserved: 0x3F (63)
-                        # +-logical_channel_number: 0x30D (781)
-
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 0x1,
-                            visible_service_flag    = 1, 
-                            logical_channel_number  = 781, 
-                        ),
-
-                      # +-logical_channel (FVX Staging): 301
-                        # +-service_id: 0xE01 (3585)
-                        # +-reserved: 0x3F (63)
-                        # +-logical_channel_number: 0x12D (301)
-
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 0xE01,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 301,
-                        ),
-                        
                       # +-logical_channel (STV): 303
                         # +-service_id: 0x2051 (8273)
                         # +-reserved: 0x3F (63)
@@ -212,28 +190,6 @@ nit = network_information_section(
                             service_ID              = 0x2051,
                             visible_service_flag    = 1,
                             logical_channel_number  = 303,
-                        ),
-                        
-                      # +-logical_channel (staging.suite.st): 782
-                        # +-service_id: 0x2 (2)
-                        # +-reserved: 0x3F (63)
-                        # +-logical_channel_number: 0x30E (782)
-
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 0x2,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 782,
-                        ),
-                        
-                      # +-logical_channel (FVX Test): 300
-                        # +-service_id: 0xE00 (3584)
-                        # +-reserved: 0x3F (63)
-                        # +-logical_channel_number: 0x12C (300)
-
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 0xE00,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 300,
                         ),
                         
                       # +-logical_channel (STV+1): 304
@@ -246,112 +202,7 @@ nit = network_information_section(
                             visible_service_flag    = 1,
                             logical_channel_number  = 304,
                         ),
-                        
-                        
-                      # New services
-
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 3586,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 305,
-                        ),
-
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4000,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 401,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4001,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 402,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4002,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 403,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4003,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 404,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4004,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 405,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4005,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 406,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4006,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 407,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4007,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 408,
-                        ),
-
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4008,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 409,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4009,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 410,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4010,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 411,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4011,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 412,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4012,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 413,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4013,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 414,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4014,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 415,
-                        ),
-                        
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 4015,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 416,
-                        ),
-                                                
+                                                                
                     ],
                 ),
             ],
