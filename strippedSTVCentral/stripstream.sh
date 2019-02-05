@@ -73,7 +73,7 @@ tscbrmuxer \
     b:3008 tmp/nit.ts \
     b:3008 tmp/pat.ts \
     b:1500 tmp/sdt.ts \
-    > output/srippedSTVCentral.ts
+    > output/strippedSTVCentral.ts
 
 
 
