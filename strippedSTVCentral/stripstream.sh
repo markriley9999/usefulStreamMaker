@@ -58,6 +58,7 @@ tsmask ~/source/STVCentral_PSB2.ts \
     -3004 \
     -3005 \
     -8000 \
+    -8191 \
     > tmp/stripped.ts
     
 
@@ -76,6 +77,7 @@ tscbrmuxer \
     > output/strippedSTVCentral.ts
 
 
+tspcrmeasure output/strippedSTVCentral.ts 5340419
 
 
 # clear up
