@@ -1,5 +1,8 @@
 import os
 
+import string
+
+
 from dvbobjects.PSI.PAT import *
 from dvbobjects.PSI.NIT import *
 from dvbobjects.PSI.SDT import *
