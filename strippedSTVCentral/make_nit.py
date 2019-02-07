@@ -103,7 +103,18 @@ nit = network_information_section(
                 # +-selector_length: 0x0 (0)
                 # +-selector_bytes: -
             # +-private_data_byte: -
-            
+        linkage_descriptor(
+            transport_stream_id = 0x107C,
+            original_network_id = 0x233A,
+            service_id =  0x1140,   
+            linkage_type = 0x9,
+            OUI_info_loop = [
+                OUI_info_loop_item (
+                    OUI = 0x15A,
+                    selector_bytes = "",
+                ),
+        ),
+        
           # +-Descriptor: extension descriptor (message_descriptor): 0x7F (127)
             # +-descriptor_tag: 0x7F (127) => extension descriptor (message_descriptor)
             # +-descriptor_length: 0x2A (42)
