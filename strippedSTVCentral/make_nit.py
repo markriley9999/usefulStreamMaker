@@ -67,7 +67,7 @@ nit = network_information_section(
               # +-secondary_region_code: 0x4 (4)
         user_descriptor(
             descriptor_tag_extension = 0xA,
-        	user_data = bytes.fromhex("474252656E674853636F746C616E64029043656E7472616C2053636F746C616E640204")        
+        	user_bytes = "474252656E674853636F746C616E64029043656E7472616C2053636F746C616E640204".decode("hex")
         ),
               
           # +-Descriptor: extension descriptor (target_region_descriptor): 0x7F (127)

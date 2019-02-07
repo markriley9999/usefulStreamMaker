@@ -1255,11 +1255,12 @@ class user_descriptor(Descriptor):
     descriptor_tag = 0x7F
     
     def bytes(self):
-        FMT = "!HB%ds" % len(self.user_data)
+
+        FMT = "!HB%ds" % len(self.user_bytes)
         return pack(FMT,      
-                    len(self.user_data) + 1,
+                    len(self.user_bytes) + 1,
                     self.descriptor_tag_extension,
-                    self.user_data,
+                    self.user_bytes,
                     )            
                                  
 ######################################################################
