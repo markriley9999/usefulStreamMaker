@@ -23,94 +23,104 @@ from dvbobjects.HBBTV.Descriptors import *
     # +-section_number: 0x0 (0)
     # +-last_section_number: 0x1 (1)
     # +-private_data: 0xF0A6401043656E7472616C2053636F746C616E647F240A474252656E674853636F746C616E64029043656E7472616C2053636F746C616E6402047F0709474252FA02044A0C107C233A1140090400015A007F2A08FE656E67446174616261736520726967 "..@.Central Scotland.$.GBRengHScotland..Central Scotland.....GBR...J.. #:.@....Z..*..engDatabase rig"
-    # +-network_descriptors_lengt: 0xA6 (166)
-    # +-network_descriptors: 7 entries
-      # +-Descriptor: network_name_descriptor: 0x40 (64)
-        # +-descriptor_tag: 0x40 (64) => network_name_descriptor
-        # +-descriptor_length: 0x10 (16)
-        # +-descriptor_data: 0x43656E7472616C2053636F746C616E64 "Central Scotland"
-        # +-network_name_encoding: default (ISO 6937, latin)
-        # +-network_name_length: 0x10 (16)
-        # +-network_name: Central Scotland
-      # +-Descriptor: extension descriptor (target_region_name_descriptor): 0x7F (127)
-        # +-descriptor_tag: 0x7F (127) => extension descriptor (target_region_name_descriptor)
-        # +-descriptor_length: 0x24 (36)
-        # +-descriptor_data: 0x0A474252656E674853636F746C616E64029043656E7472616C2053636F746C616E640204 ".GBRengHScotland..Central Scotland.."
-        # +-descriptor_tag_extension: 0xA (10) => target_region_name_descriptor
-        # +-selector_byte: 0x474252656E674853636F746C616E64029043656E7472616C2053636F746C616E640204 "GBRengHScotland..Central Scotland.."
-        # +-country_code: GBR
-        # +-ISO_639_language_code: eng
-        # +-TargetRegionName
-          # +-region_dept: 0x1 (1)
-          # +-region_name_length: 0x8 (8)
-          # +-region_name: Scotland
-          # +-primary_region_code: 0x2 (2)
-        # +-TargetRegionName
-          # +-region_dept: 0x2 (2)
-          # +-region_name_length: 0x10 (16)
-          # +-region_name: Central Scotland
-          # +-primary_region_code: 0x2 (2)
-          # +-secondary_region_code: 0x4 (4)
-      # +-Descriptor: extension descriptor (target_region_descriptor): 0x7F (127)
-        # +-descriptor_tag: 0x7F (127) => extension descriptor (target_region_descriptor)
-        # +-descriptor_length: 0x7 (7)
-        # +-descriptor_data: 0x09474252FA0204 ".GBR..."
-        # +-descriptor_tag_extension: 0x9 (9) => target_region_descriptor
-        # +-selector_byte: 0x474252FA0204 "GBR..."
-        # +-country_code: GBR
-        # +-TargetRegion
-          # +-reserved: 0x1F (31)
-          # +-country_code_flag: 0x0 (0)
-          # +-region_dept: 0x2 (2)
-          # +-primary_region_code: 0x2 (2)
-          # +-secondary_region_code: 0x4 (4)
-      # +-Descriptor: linkage_descriptor: 0x4A (74)
-        # +-descriptor_tag: 0x4A (74) => linkage_descriptor
-        # +-descriptor_length: 0xC (12)
-        # +-descriptor_data: 0x107C233A1140090400015A00 ". #:.@....Z."
-        # +-transport_stream_id: 0x107C (4220)
-        # +-original_network_id: 0x233A (9018) => UK Digital Terrestrial Television
-        # +-service_id: 0x1140 (4416)
-        # +-linkage_type: 0x9 (9) => System Software Update Service
-        # +-Systems Software Update: 1 entries
-          # +-OUI
-            # +-oui: 0x15A (346) => Digital Video Broadcasting
-            # +-selector_length: 0x0 (0)
-            # +-selector_bytes: -
-        # +-private_data_byte: -
-      # +-Descriptor: extension descriptor (message_descriptor): 0x7F (127)
-        # +-descriptor_tag: 0x7F (127) => extension descriptor (message_descriptor)
-        # +-descriptor_length: 0x2A (42)
-        # +-descriptor_data: 0x08FE656E674461746162617365207269676874206F66204469676974616C20554B204C74642032303137 "..engDatabase right of Digital UK Ltd 2017"
-        # +-descriptor_tag_extension: 0x8 (8) => message_descriptor
-        # +-selector_byte: 0xFE656E674461746162617365207269676874206F66204469676974616C20554B204C74642032303137 ".engDatabase right of Digital UK Ltd 2017"
-        # +-message_id: 0xFE (254)
-        # +-iso639LanguageCode: eng
-        # +-message: Database right of Digital UK Ltd 2017
-      # +-Descriptor: private_data_specifier_descriptor: 0x5F (95)
-        # +-descriptor_tag: 0x5F (95) => private_data_specifier_descriptor
-        # +-descriptor_length: 0x4 (4)
-        # +-descriptor_data: 0x0000233A "..#:"
-        # +-private_data_specifier: 0x233A (9018) => Independent Television Commission
-
-      # +-Descriptor: extension descriptor (URI_linkage_descriptor): 0x7F (127)
-        # +-descriptor_tag: 0x7F (127) => extension descriptor (URI_linkage_descriptor)
-        # +-descriptor_length: 0x23 (35)
-        # +-descriptor_data: 0x13802068747470733A2F2F617574682D6374762E6469676974616C756B2E636F2E756B ".. https://auth-ctv.digitaluk.co.uk"
-        # +-descriptor_tag_extension: 0x13 (19) => URI_linkage_descriptor
-        # +-selector_byte: 0x802068747470733A2F2F617574682D6374762E6469676974616C756B2E636F2E756B ". https://auth-ctv.digitaluk.co.uk"
-        # +-uri_linkage_type: 0x80 (128) => User defined
-        # +-uri_length: 0x20 (32)
-        # +-uri_char: 0x68747470733A2F2F617574682D6374762E6469676974616C756B2E636F2E756B "https://auth-ctv.digitaluk.co.uk"
   
 nit = network_information_section(
 
 	network_id = 0x3048,
 
+    # +-network_descriptors_lengt: 0xA6 (166)
+    # +-network_descriptors: 7 entries
+    
     network_descriptor_loop = [
+          # +-Descriptor: network_name_descriptor: 0x40 (64)
+            # +-descriptor_tag: 0x40 (64) => network_name_descriptor
+            # +-descriptor_length: 0x10 (16)
+            # +-descriptor_data: 0x43656E7472616C2053636F746C616E64 "Central Scotland"
+            # +-network_name_encoding: default (ISO 6937, latin)
+            # +-network_name_length: 0x10 (16)
+            # +-network_name: Central Scotland           
         network_descriptor(
             network_name = "Central Scotland",
         ),
+
+          # +-Descriptor: extension descriptor (target_region_name_descriptor): 0x7F (127)
+            # +-descriptor_tag: 0x7F (127) => extension descriptor (target_region_name_descriptor)
+            # +-descriptor_length: 0x24 (36)
+            # +-descriptor_data: 0x0A474252656E674853636F746C616E64029043656E7472616C2053636F746C616E640204 ".GBRengHScotland..Central Scotland.."
+            # +-descriptor_tag_extension: 0xA (10) => target_region_name_descriptor
+            # +-selector_byte: 0x474252656E674853636F746C616E64029043656E7472616C2053636F746C616E640204 "GBRengHScotland..Central Scotland.."
+            # +-country_code: GBR
+            # +-ISO_639_language_code: eng
+            # +-TargetRegionName
+              # +-region_dept: 0x1 (1)
+              # +-region_name_length: 0x8 (8)
+              # +-region_name: Scotland
+              # +-primary_region_code: 0x2 (2)
+            # +-TargetRegionName
+              # +-region_dept: 0x2 (2)
+              # +-region_name_length: 0x10 (16)
+              # +-region_name: Central Scotland
+              # +-primary_region_code: 0x2 (2)
+              # +-secondary_region_code: 0x4 (4)
+        user_descriptor(
+            descriptor_tag_extension = 0xA
+        	user_data = bytes.fromhex("474252656E674853636F746C616E64029043656E7472616C2053636F746C616E640204")        
+        ),
+              
+          # +-Descriptor: extension descriptor (target_region_descriptor): 0x7F (127)
+            # +-descriptor_tag: 0x7F (127) => extension descriptor (target_region_descriptor)
+            # +-descriptor_length: 0x7 (7)
+            # +-descriptor_data: 0x09474252FA0204 ".GBR..."
+            # +-descriptor_tag_extension: 0x9 (9) => target_region_descriptor
+            # +-selector_byte: 0x474252FA0204 "GBR..."
+            # +-country_code: GBR
+            # +-TargetRegion
+              # +-reserved: 0x1F (31)
+              # +-country_code_flag: 0x0 (0)
+              # +-region_dept: 0x2 (2)
+              # +-primary_region_code: 0x2 (2)
+              # +-secondary_region_code: 0x4 (4)
+              
+          # +-Descriptor: linkage_descriptor: 0x4A (74)
+            # +-descriptor_tag: 0x4A (74) => linkage_descriptor
+            # +-descriptor_length: 0xC (12)
+            # +-descriptor_data: 0x107C233A1140090400015A00 ". #:.@....Z."
+            # +-transport_stream_id: 0x107C (4220)
+            # +-original_network_id: 0x233A (9018) => UK Digital Terrestrial Television
+            # +-service_id: 0x1140 (4416)
+            # +-linkage_type: 0x9 (9) => System Software Update Service
+            # +-Systems Software Update: 1 entries
+              # +-OUI
+                # +-oui: 0x15A (346) => Digital Video Broadcasting
+                # +-selector_length: 0x0 (0)
+                # +-selector_bytes: -
+            # +-private_data_byte: -
+            
+          # +-Descriptor: extension descriptor (message_descriptor): 0x7F (127)
+            # +-descriptor_tag: 0x7F (127) => extension descriptor (message_descriptor)
+            # +-descriptor_length: 0x2A (42)
+            # +-descriptor_data: 0x08FE656E674461746162617365207269676874206F66204469676974616C20554B204C74642032303137 "..engDatabase right of Digital UK Ltd 2017"
+            # +-descriptor_tag_extension: 0x8 (8) => message_descriptor
+            # +-selector_byte: 0xFE656E674461746162617365207269676874206F66204469676974616C20554B204C74642032303137 ".engDatabase right of Digital UK Ltd 2017"
+            # +-message_id: 0xFE (254)
+            # +-iso639LanguageCode: eng
+            # +-message: Database right of Digital UK Ltd 2017
+            
+          # +-Descriptor: private_data_specifier_descriptor: 0x5F (95)
+            # +-descriptor_tag: 0x5F (95) => private_data_specifier_descriptor
+            # +-descriptor_length: 0x4 (4)
+            # +-descriptor_data: 0x0000233A "..#:"
+            # +-private_data_specifier: 0x233A (9018) => Independent Television Commission
+
+          # +-Descriptor: extension descriptor (URI_linkage_descriptor): 0x7F (127)
+            # +-descriptor_tag: 0x7F (127) => extension descriptor (URI_linkage_descriptor)
+            # +-descriptor_length: 0x23 (35)
+            # +-descriptor_data: 0x13802068747470733A2F2F617574682D6374762E6469676974616C756B2E636F2E756B ".. https://auth-ctv.digitaluk.co.uk"
+            # +-descriptor_tag_extension: 0x13 (19) => URI_linkage_descriptor
+            # +-selector_byte: 0x802068747470733A2F2F617574682D6374762E6469676974616C756B2E636F2E756B ". https://auth-ctv.digitaluk.co.uk"
+            # +-uri_linkage_type: 0x80 (128) => User defined
+            # +-uri_length: 0x20 (32)
+            # +-uri_char: 0x68747470733A2F2F617574682D6374762E6469676974616C756B2E636F2E756B "https://auth-ctv.digitaluk.co.uk"
         URI_linkage_descriptor(
         	URI_linkage = "https://auth-ctv.digitaluk.co.uk"        
         ),
