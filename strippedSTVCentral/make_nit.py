@@ -83,6 +83,11 @@ nit = network_information_section(
               # +-region_dept: 0x2 (2)
               # +-primary_region_code: 0x2 (2)
               # +-secondary_region_code: 0x4 (4)
+        user_descriptor(
+            descriptor_tag_extension = 0x9,
+        	user_bytes = "474252FA0204".decode("hex")
+        ),
+              
               
           # +-Descriptor: linkage_descriptor: 0x4A (74)
             # +-descriptor_tag: 0x4A (74) => linkage_descriptor
@@ -108,6 +113,10 @@ nit = network_information_section(
             # +-message_id: 0xFE (254)
             # +-iso639LanguageCode: eng
             # +-message: Database right of Digital UK Ltd 2017
+        user_descriptor(
+            descriptor_tag_extension = 0x8,
+        	user_bytes = "FE656E674461746162617365207269676874206F66204469676974616C20554B204C74642032303137".decode("hex")
+        ),
             
           # +-Descriptor: private_data_specifier_descriptor: 0x5F (95)
             # +-descriptor_tag: 0x5F (95) => private_data_specifier_descriptor
