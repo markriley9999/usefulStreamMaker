@@ -1248,3 +1248,19 @@ class bouquet_descriptor(Descriptor):
             self.bouquet_name,
         )
 
+
+######################################################################
+class user_descriptor(Descriptor):
+
+    descriptor_tag = 0x7F
+    l = len(self.user_data) + 1
+    
+    def bytes(self):
+        FMT = "!HB%ds" % l
+        return pack(FMT,      
+                    l,
+                    self.descriptor_tag_extension,
+                    self.user_data,
+                    )            
+                                 
+######################################################################
