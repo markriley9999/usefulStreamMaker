@@ -108,11 +108,13 @@ nit = network_information_section(
             original_network_id = 0x233A,
             service_id =  0x1140,   
             linkage_type = 0x9,
-            OUI_info_loop = [
-                OUI_info_loop_item (
-                    OUI = 0x15A,
-                    selector_bytes = "",
-                ),
+			OUI_loop = [
+				OUI_data (
+					OUI = 0x15A,
+					selector_bytes = "",
+				)
+			],
+			private_data_bytes = "",
         ),
         
           # +-Descriptor: extension descriptor (message_descriptor): 0x7F (127)
