@@ -1253,9 +1253,9 @@ class bouquet_descriptor(Descriptor):
 class user_descriptor(Descriptor):
 
     descriptor_tag = 0x7F
-    l = len(self.user_data) + 1
     
     def bytes(self):
+        l = len(self.user_data) + 1
         FMT = "!HB%ds" % l
         return pack(FMT,      
                     l,
