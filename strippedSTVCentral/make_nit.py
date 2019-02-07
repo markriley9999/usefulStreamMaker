@@ -136,7 +136,12 @@ nit = network_information_section(
             # +-descriptor_length: 0x4 (4)
             # +-descriptor_data: 0x0000233A "..#:"
             # +-private_data_specifier: 0x233A (9018) => Independent Television Commission
-
+        private_data_specifier_descriptor(
+            private_data_specifier = 0x233A,
+        ),
+        
+            
+            
           # +-Descriptor: extension descriptor (URI_linkage_descriptor): 0x7F (127)
             # +-descriptor_tag: 0x7F (127) => extension descriptor (URI_linkage_descriptor)
             # +-descriptor_length: 0x23 (35)
