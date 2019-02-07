@@ -68,16 +68,16 @@ python ./make_pat.py
 python ./make_sdt.py
 
 
-# bitrate: 0x517D03 (5340419)
+# bitrate: 0x4CE29B (5038747)
 tscbrmuxer \
-    c:5340419 tmp/stripped.ts \
+    c:5038747 tmp/stripped.ts \
     b:3008 tmp/nit.ts \
     b:3008 tmp/pat.ts \
     b:1500 tmp/sdt.ts \
     > output/strippedSTVCentral.ts
 
 
-tspcrmeasure output/strippedSTVCentral.ts 5340419
+tspcrmeasure output/strippedSTVCentral.ts 5038747
 
 
 if [ "$1" == "--fixav" ]; then
