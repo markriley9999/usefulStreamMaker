@@ -58,7 +58,6 @@ tsmask ~/source/STVCentral_PSB2.ts \
     -3004 \
     -3005 \
     -8000 \
-    -8191 \
     > tmp/stripped.ts
     
 
@@ -68,16 +67,16 @@ python ./make_pat.py
 python ./make_sdt.py
 
 
-# bitrate: 0x4CE29B (5038747)
+# bitrate: 0x51769C (5338780)
 tscbrmuxer \
-    c:5038747 tmp/stripped.ts \
+    c:5500000 tmp/stripped.ts \
     b:3008 tmp/nit.ts \
     b:3008 tmp/pat.ts \
     b:1500 tmp/sdt.ts \
     > output/strippedSTVCentral.ts
 
 
-tspcrmeasure output/strippedSTVCentral.ts 5038747
+tspcrmeasure output/strippedSTVCentral.ts 5500000
 
 
 if [ "$1" == "--fixav" ]; then
