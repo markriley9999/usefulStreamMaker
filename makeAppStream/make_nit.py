@@ -104,7 +104,7 @@ from dvbobjects.HBBTV.Descriptors import *
   
 nit = network_information_section(
 
-	network_id = 12336,
+	network_id = 12339,
 
     network_descriptor_loop = [
         network_descriptor(network_name = "London"), 
