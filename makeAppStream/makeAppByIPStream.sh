@@ -20,7 +20,7 @@ python ./make_ait.py "3401" "100" "http://ec2-35-176-80-199.eu-west-2.compute.am
 
 # bitrate: 0xAE7E6C (11435628)
 tscbrmuxer \
-    b:3008 tmp/nit.ts \
+    c:3008 tmp/nit.ts \
     b:3008 tmp/pat.ts \
     b:1500 tmp/sdt.ts \
     b:3008 tmp/pmt-user1.ts \
