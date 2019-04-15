@@ -32,6 +32,11 @@ nit = network_information_section(
                     dvb_service_descriptor_loop = [
                 
                         service_descriptor_loop_item(
+                            service_ID      = 0x1, 
+                            service_type    = 0x1, 
+                        ),
+                      
+                         service_descriptor_loop_item(
                             service_ID      = 4000, 
                             service_type    = 0xC, 
                         ),
@@ -48,6 +53,12 @@ nit = network_information_section(
                 logical_channel_descriptor(
                 
                     lcn_service_descriptor_loop = [
+
+                        lcn_service_descriptor_loop_item(
+                            service_ID              = 0x1,
+                            visible_service_flag    = 1, 
+                            logical_channel_number  = 781, 
+                        ),
 
                         lcn_service_descriptor_loop_item(
                             service_ID              = 4000,

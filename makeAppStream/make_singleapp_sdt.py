@@ -31,6 +31,21 @@ sdt = service_description_section(
                 ),    
             ],
         ),	
+
+        service_loop_item(
+            service_ID                      = 1,
+            EIT_schedule_flag               = 0x0,
+            EIT_present_following_flag      = 0x0, 
+            running_status                  = 4, 
+            free_CA_mode                    = 0, 
+            service_descriptor_loop = [
+                service_descriptor(
+                    service_type            = 1, 
+                    service_provider_name   = "DUK",
+                    service_name            = "the.suite.st",
+                ),    
+            ],
+        ),	
         
     ],
     
