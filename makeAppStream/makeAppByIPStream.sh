@@ -5,8 +5,20 @@ mkdir -p output
 
 rm -rf tmp/*
 
+ffmpeg -y -i ~/source/keep-CosmosLaundromat.mp4 -c copy -ss 00:06:30 -t 90 tmp/av.mp4
 
-python ./make_pmt.py "3400" "4000" "pmt-user1"   "3401"
+ffmpeg -y -i tmp/av.mp4  -vf "scale=-1:480, crop=720:480" -c:v libx264 -x264opts keyint=12:min-keyint=12:no-scenecut -c:a aac -ac 2 tmp/av2.mp4
+
+ffmpeg -y -i tmp/av2.mp4 -i ~/source/STV_logo_2014_scale.png -filter_complex "overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2" -codec:a copy tmp/av3.mp4
+
+ffmpeg -y -i tmp/av3.mp4 -vf "scale=-1:480, crop=720:480" -c:v libx264 -b:v 823k -maxrate:0 823k -minrate:0 823k -bufsize:0 1000000 -x264opts keyint=12:min-keyint=12:no-scenecut -c:a aac -ac 2 -ab 128000 -ar 48000 -b:a 128k -maxrate:1 128k -minrate:1 128k -bufsize:1 200000 -muxrate 1200000 -fflags +genpts -f mpegts -mpegts_original_network_id 1 -mpegts_transport_stream_id 1 -mpegts_service_id 4000 -mpegts_pmt_start_pid 3399 -streamid 0:3402 -streamid 1:3403 -metadata service_provider="CHANGEME" -metadata service_name="CHANGEME" -map 0:0 -map 0:1 tmp/spts.ts 
+
+tsmask tmp/spts.ts -0 -16 -17 -3400 > tmp/spts-nosi.ts
+
+
+
+
+python ./make_pmt_av.py "3400" "3402" "3403" "4000" "pmt-user1"   "3401"
 
 python ./make_singleapp_nit.py
 
@@ -27,7 +39,8 @@ tsmask ~/source/Suitest_Channel.ts \
 
 # bitrate: 0xAE7E6C (11435628)
 tscbrmuxer \
-    c:11435628 tmp/suitest_stripped.ts \
+    c:1200000 tmp/spts-nosi.ts \
+    b:11435628 tmp/suitest_stripped.ts \
     b:3008 tmp/nit.ts \
     b:3008 tmp/pat.ts \
     b:1500 tmp/sdt.ts \
