@@ -37,10 +37,8 @@ tsmask ~/source/Suitest_Channel.ts \
 
 
 
-# bitrate: 0xAE7E6C (11435628)
 tscbrmuxer \
     c:1200000 tmp/spts-nosi.ts \
-    b:11435628 tmp/suitest_stripped.ts \
     b:3008 tmp/nit.ts \
     b:3008 tmp/pat.ts \
     b:1500 tmp/sdt.ts \
