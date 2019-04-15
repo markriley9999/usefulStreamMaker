@@ -17,10 +17,18 @@ python ./make_singleapp_sdt.py
 python ./make_ait.py "3401" "100" "http://ec2-35-176-80-199.eu-west-2.compute.amazonaws.com/" "UserApp1"    "appbyip.html"    "ait-user1"
 
 
+tsmask ~/source/Suitest_Channel.ts \
+    -0 \
+    -16 \
+    -17 \
+    > tmp/suitest_stripped.ts
+
+
 
 # bitrate: 0xAE7E6C (11435628)
 tscbrmuxer \
-    c:3008 tmp/nit.ts \
+    c:11435628 tmp/suitest_stripped.ts \
+    b:3008 tmp/nit.ts \
     b:3008 tmp/pat.ts \
     b:1500 tmp/sdt.ts \
     b:3008 tmp/pmt-user1.ts \
