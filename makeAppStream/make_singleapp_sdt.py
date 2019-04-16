@@ -27,7 +27,7 @@ sdt = service_description_section(
                 service_descriptor(
                     service_type            = 0xC, 
                     service_provider_name   = "DUK",
-                    service_name            = "User App 1",
+                    service_name            = "User App",
                 ),    
             ],
         ),	

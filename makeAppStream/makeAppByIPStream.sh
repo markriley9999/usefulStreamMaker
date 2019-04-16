@@ -26,7 +26,7 @@ python ./make_singleapp_pat.py
 python ./make_singleapp_sdt.py
 
 
-python ./make_ait.py "3401" "100" "http://ec2-35-176-80-199.eu-west-2.compute.amazonaws.com/" "UserApp1"    "appbyip.html"    "ait-user1"
+python ./make_ait.py "3401" "100" "http://ec2-35-176-80-199.eu-west-2.compute.amazonaws.com/" "UserApp"    "appbyip.html"    "ait-user1"
 
 
 tsmask ~/source/Suitest_Channel.ts \

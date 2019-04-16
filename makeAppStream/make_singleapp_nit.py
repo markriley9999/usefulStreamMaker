@@ -52,7 +52,7 @@ nit = network_information_section(
                         lcn_service_descriptor_loop_item(
                             service_ID              = 4000,
                             visible_service_flag    = 1,
-                            logical_channel_number  = 401,
+                            logical_channel_number  = 1,
                         ),
                         
                     ],
