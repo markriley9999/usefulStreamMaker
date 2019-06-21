@@ -1,6 +1,6 @@
 FILEIN="$1"
 NAMEOUT="${FILEIN%.*}"
-MPDOUT="$NAMEOUT/.mpd"
+MPDOUT="$NAMEOUT.mpd"
 
 echo "Manifest out: $MPDOUT"
 
@@ -11,7 +11,7 @@ rm -rf tmp/*
 
 # ---Strip metadata and subs ---
 
-ffmpeg -i FILEIN -map_metadata -1 -vcodec copy -acodec copy -map 0:0 -map 0:1  tmp/stripped.mp4
+ffmpeg -i "$FILEIN" -map_metadata -1 -vcodec copy -acodec copy -map 0:0 -map 0:1  tmp/stripped.mp4
 
 
 # --- scale and crop, aac audio ---
@@ -71,5 +71,5 @@ ffprobe -show_frames -print_format compact tmp/v5.mp4 > tmp/frames_5.txt
 
 # --- dash ---
 
-MP4Box -dash 3840 -rap  -frag-rap -bs-switching inband -profile dashavc264:live -segment-name $RepresentationID$/SEG$Number$ -out MPDOUT tmp/audio.m4a tmp/v1.mp4 tmp/v2.mp4 tmp/v3.mp4 tmp/v4.mp4 tmp/v5.mp4 
+MP4Box -dash 3840 -rap  -frag-rap -bs-switching inband -profile dashavc264:live -segment-name $RepresentationID$/SEG$Number$ -out $MPDOUT tmp/audio.m4a tmp/v1.mp4 tmp/v2.mp4 tmp/v3.mp4 tmp/v4.mp4 tmp/v5.mp4 
 
