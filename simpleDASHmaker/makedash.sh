@@ -77,7 +77,7 @@ rm -rf $DASHDIR/*
 
 cd $DASHDIR
 
-MP4Box -dash 3840 -rap  -frag-rap -bs-switching inband -profile dashavc264:live -segment-name $RepresentationID$/SEG$Number$ -out $MPDOUT ../tmp/audio.m4a ../tmp/v1.mp4 ../tmp/v2.mp4 ../tmp/v3.mp4 ../tmp/v4.mp4 ../tmp/v5.mp4 
+MP4Box -dash 3840 -rap  -frag-rap -bs-switching inband -profile dashavc264:live -segment-name "\$RepresentationID\$/SEG\$Number\$" -out $MPDOUT ../tmp/audio.m4a ../tmp/v1.mp4 ../tmp/v2.mp4 ../tmp/v3.mp4 ../tmp/v4.mp4 ../tmp/v5.mp4 
 
 cd ..
 
@@ -87,5 +87,4 @@ tar -czvf $TARNAME $DASHDIR/
 # -- xfer --
 if [ "$2" == "--xfer" ]; then
    aws s3 cp $TARNAME s3://duk-contentmaker-out
-/duk-scot/*.sh ~/generalScripts/content/duk-scot/
 fi
