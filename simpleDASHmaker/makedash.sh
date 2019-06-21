@@ -1,8 +1,8 @@
 FILEIN="$1"
 NAMEOUT="${FILEIN%.*}"
 MPDOUT="$NAMEOUT.mpd"
-DASHDIR="dash-$NAMEOUT"
-TARNAME="dash-content-$NAMEOUT.tar.gz"
+DASHDIR="dash_$NAMEOUT"
+TARNAME="dash_content_$NAMEOUT.tar.gz"
 
 echo "Manifest out: $MPDOUT"
 
