@@ -1,6 +1,8 @@
 FILEIN="$1"
 NAMEOUT="${FILEIN%.*}"
 MPDOUT="$NAMEOUT.mpd"
+DASHDIR="dash-$NAMEOUT"
+TARNAME="dash-content-$NAMEOUT.tar.gz"
 
 echo "Manifest out: $MPDOUT"
 
@@ -70,6 +72,20 @@ ffprobe -show_frames -print_format compact tmp/v5.mp4 > tmp/frames_5.txt
 
 
 # --- dash ---
+mkdir -p $DASHDIR
+rm -rf $DASHDIR/*
 
-MP4Box -dash 3840 -rap  -frag-rap -bs-switching inband -profile dashavc264:live -segment-name $RepresentationID$/SEG$Number$ -out $MPDOUT tmp/audio.m4a tmp/v1.mp4 tmp/v2.mp4 tmp/v3.mp4 tmp/v4.mp4 tmp/v5.mp4 
+cd $DASHDIR
 
+MP4Box -dash 3840 -rap  -frag-rap -bs-switching inband -profile dashavc264:live -segment-name $RepresentationID$/SEG$Number$ -out $MPDOUT ../tmp/audio.m4a ../tmp/v1.mp4 ../tmp/v2.mp4 ../tmp/v3.mp4 ../tmp/v4.mp4 ../tmp/v5.mp4 
+
+cd ..
+
+tar -czvf $TARNAME $DASHDIR/
+
+
+# -- xfer --
+if [ "$2" == "--xfer" ]; then
+   aws s3 cp $TARNAME s3://duk-contentmaker-out
+/duk-scot/*.sh ~/generalScripts/content/duk-scot/
+fi
