@@ -1,5 +1,5 @@
 FILEIN="$1"
-NAMEOUT="${FILEIN%.*}"
+NAMEOUT=$(basename "${FILEIN%.*}")
 MPDOUT="$NAMEOUT.mpd"
 DASHDIR="dash_$NAMEOUT"
 TARNAME="dash_content_$NAMEOUT.tar.gz"
@@ -13,7 +13,7 @@ rm -rf tmp/*
 
 # ---Strip metadata and subs ---
 
-ffmpeg -i "$FILEIN" -map_metadata -1 -vcodec copy -acodec copy -map 0:0 -map 0:1  tmp/stripped.mp4
+ffmpeg -i "$FILEIN" -t 60 -map_metadata -1 -vcodec copy -acodec copy -map 0:0 -map 0:1  tmp/stripped.mp4
 
 
 # --- scale and crop, aac audio ---
