@@ -12,12 +12,14 @@ rm -rf tmp/*
 
 
 # ---Strip metadata and subs ---
-
 ffmpeg -i "$FILEIN" -map_metadata -1 -vcodec copy -acodec copy -map 0:0 -map 0:1  tmp/stripped.mp4
+
+# --- Convert to 25 fps! ---
+ffmpeg -i tmp/stripped.mp4  -filter_complex "[0:v]setpts=24/25*PTS[v];[0:a]atempo=25/24[a]" -map "[v]" -map "[a]" -r 25 -t 3610 tmp/av25fps.mp4
 
 
 # --- scale and crop, aac audio ---
- ffmpeg -i tmp/stripped.mp4 -vf "scale=-1:1080, crop=1920:1080" -c:v libx264 -r 24 -profile:v main -preset fast -c:a aac -ac 1  -movflags +faststart tmp/source.mp4
+ ffmpeg -i tmp/av25fps.mp4 -vf "scale=-1:1080, crop=1920:1080" -c:v libx264 -r 24 -profile:v main -preset fast -c:a aac -ac 1  -movflags +faststart tmp/source.mp4
 
 
 # --- Split AV ---
