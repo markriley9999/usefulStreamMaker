@@ -115,6 +115,8 @@ tscbrmuxer \
     b:1400 tmp/ait-atvg.ts \
     > output/app_stream.ts
 
+rm ./tmp/*.ts
+
 if [ "$1" == "--xfer" ]; then
    # Backup
    cp output/*.ts ~/out/
@@ -124,6 +126,5 @@ if [ "$1" == "--xfer" ]; then
    cd ~/out/
    aws s3 sync . s3://duk-contentmaker-out
 fi
-
 
 echo "*** Done ***"

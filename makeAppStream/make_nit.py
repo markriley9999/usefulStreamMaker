@@ -8,13 +8,54 @@ from dvbobjects.DVB.Descriptors import *
 from dvbobjects.MPEG.Descriptors import *
 from dvbobjects.MHP.AIT import *
 from dvbobjects.HBBTV.Descriptors import *
+from uri import *
+from target_region_descriptor import *
 
 nit = network_information_section(
-
 	network_id = 12339,
-
     network_descriptor_loop = [
-        network_descriptor(network_name = "London"),
+	    network_descriptor(network_name = "DUK in-house testing",),
+		target_region_name_descriptor(
+			ISO_639_language_code = "eng",
+			target_region_name_descriptor_loop = [
+				target_region_name_descriptor_loop_item(
+				region_depth = 0x01,
+				region_name = "England",
+				primary_region_code = 0x01,
+				secondary_region_code = 0x00,
+				tertiary_region_code = 0x0000,
+				),
+				target_region_name_descriptor_loop_item(
+				region_depth = 0x02,
+				region_name = "London",
+				primary_region_code = 0x01,
+				secondary_region_code = 0x12,
+				tertiary_region_code = 0x0000,
+				),
+				target_region_name_descriptor_loop_item(
+				region_depth = 0x03,
+				region_name = "Greater London",
+				primary_region_code = 0x01,
+				secondary_region_code = 0x12,
+				tertiary_region_code = 0x0001,
+				),
+			],
+			country_code = "GBR",
+		),
+		target_region_descriptor(
+			target_region_descriptor_loop = [
+				target_region_descriptor_loop_item(
+				reserved = 0x1F,
+				country_code_flag = 0x0,
+				region_depth = 0x02,
+				primary_region_code = 0x01,
+				secondary_region_code = 0x12,
+				),
+			],
+			country_code = "GBR",
+		),
+		private_data_specifier_descriptor(private_data_specifier = 0x0000233a,),
+		uri_linkage_descriptor(uri_char = "https://auth.freeviewplay.net",),
     ],
 	transport_stream_loop = [
 	    transport_stream_loop_item(
