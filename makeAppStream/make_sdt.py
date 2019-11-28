@@ -13,7 +13,7 @@ sdt = service_description_section(
 	transport_stream_id = 0x1000,
 	original_network_id = 9018,
 
-    # +-services_loop: 6 entries
+
     service_loop = [
         service_loop_item(
             service_ID                      = 3584,
@@ -43,7 +43,6 @@ sdt = service_description_section(
                 ),
             ],
         ),
-        # New service: FVX Pre-Production
         service_loop_item(
             service_ID                      = 3586,
             EIT_schedule_flag               = 0x0,
@@ -58,7 +57,6 @@ sdt = service_description_section(
                 ),
             ],
         ),
-        # New services: User App
         service_loop_item(
             service_ID                      = 4000,
             EIT_schedule_flag               = 0x0,
@@ -311,7 +309,20 @@ sdt = service_description_section(
                 ),
             ],
         ),
-
+        service_loop_item(
+            service_ID                      = 2580,
+            EIT_schedule_flag               = 0x0,
+            EIT_present_following_flag      = 0x0,
+            running_status                  = 4,
+            free_CA_mode                    = 0,
+            service_descriptor_loop = [
+                service_descriptor(
+                    service_type            = 0xC,
+                    service_provider_name   = "DUK",
+                    service_name            = "Accessible TV Guide",
+                ),
+            ],
+        ),
     ],
     version_number = 1, # you need to change the table number every time you edit, so the decoder will compare its version with the new one and update the table
     section_number = 0,

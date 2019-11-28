@@ -15,14 +15,6 @@ pat = program_association_section(
     transport_stream_id = 0x1000,
     program_loop = [
         program_loop_item(
-            program_number = 0x1,
-            PID = 200,
-        ),
-        program_loop_item(
-            program_number = 0x2,
-            PID = 300,
-        ),
-        program_loop_item(
             program_number = 3584,
             PID = 3100,
         ),
@@ -97,6 +89,18 @@ pat = program_association_section(
         program_loop_item(
             program_number = 4015,
             PID = 3430,
+        ),
+        program_loop_item(
+            program_number = 0x1,
+            PID = 200,
+        ),
+        program_loop_item(
+            program_number = 0x2,
+            PID = 300,
+        ),
+        program_loop_item(
+            program_number = 2580,
+            PID = 3800,
         ),
     ],
 

@@ -27,6 +27,8 @@ python ./make_pmt.py "3426" "4013" "pmt-user14"  "3427"
 python ./make_pmt.py "3428" "4014" "pmt-user15"  "3429"
 python ./make_pmt.py "3430" "4015" "pmt-user16"  "3431"
 
+python ./make_pmt.py "3800" "2580" "pmt-atvg" "3801"
+
 python ./make_nit.py
 
 python ./make_pat.py
@@ -55,16 +57,16 @@ python ./make_ait.py "3427" "113" "http://ec2-35-176-225-4.eu-west-2.compute.ama
 python ./make_ait.py "3429" "114" "http://ec2-35-176-225-4.eu-west-2.compute.amazonaws.com/" "UserApp15"   "redirect15.html"   "ait-user15"
 python ./make_ait.py "3431" "115" "http://ec2-35-176-225-4.eu-west-2.compute.amazonaws.com/" "UserApp16"   "redirect16.html"   "ait-user16"
 
+python ./make_ait.py "3801" "555" "http://aepg:43pg@aepg.rathermarvellous.com" "ATVG"   ""   "ait-atvg"
 
 
-tsmask ~/source/Suitest_Channel.ts \
+
+tsmask ./Suitest_Channel.ts \
     -0 \
     -16 \
     -17 \
     > tmp/suitest_stripped.ts
 
-    
-# bitrate: 0xAE7E6C (11435628)
 tscbrmuxer \
     c:11435628 tmp/suitest_stripped.ts \
     b:3008 tmp/nit.ts \
@@ -89,6 +91,8 @@ tscbrmuxer \
     b:3008 tmp/pmt-user14.ts \
     b:3008 tmp/pmt-user15.ts \
     b:3008 tmp/pmt-user16.ts \
+    b:3008 tmp/pmt-user16.ts \
+    b:3008 tmp/pmt-atvg.ts \
     b:1400 tmp/ait1.ts \
     b:1400 tmp/ait2.ts \
     b:1400 tmp/ait3.ts \
@@ -108,14 +112,8 @@ tscbrmuxer \
     b:1400 tmp/ait-user14.ts \
     b:1400 tmp/ait-user15.ts \
     b:1400 tmp/ait-user16.ts \
+    b:1400 tmp/ait-atvg.ts \
     > output/app_stream.ts
-
-    
-
-# clear up
-#rm tmp/*.ts
-
-
 
 if [ "$1" == "--xfer" ]; then
    # Backup
@@ -125,8 +123,6 @@ if [ "$1" == "--xfer" ]; then
 
    cd ~/out/
    aws s3 sync . s3://duk-contentmaker-out
-
-   # cp ~/duk-scot/*.py ~/duk-scot/*.sh ~/generalScripts/content/duk-scot/
 fi
 
 

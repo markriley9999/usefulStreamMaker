@@ -24,28 +24,12 @@ nit = network_information_section(
                 service_list_descriptor(
                     dvb_service_descriptor_loop = [
                         service_descriptor_loop_item(
-                            service_ID      = 0x2015,
-                            service_type    = 0x1,
-                        ),
-                        service_descriptor_loop_item(
-                            service_ID      = 0x20B5,
-                            service_type    = 0x1,
-                        ),
-                        service_descriptor_loop_item(
                             service_ID      = 0xE00,
                             service_type    = 0xC,
                         ),
                         service_descriptor_loop_item(
                             service_ID      = 0xE01,
                             service_type    = 0xC,
-                        ),
-                        service_descriptor_loop_item(
-                            service_ID      = 0x1,
-                            service_type    = 0x1,
-                        ),
-                        service_descriptor_loop_item(
-                            service_ID      = 0x2,
-                            service_type    = 0x1,
                         ),
                         service_descriptor_loop_item(
                             service_ID      = 3586,
@@ -115,7 +99,18 @@ nit = network_information_section(
                             service_ID      = 4015,
                             service_type    = 0xC,
                         ),
-
+                        service_descriptor_loop_item(
+                            service_ID      = 0x1, # Suitest channel
+                            service_type    = 0x1,
+                        ),
+                        service_descriptor_loop_item(
+                            service_ID      = 0x2, # Suitest staging channel
+                            service_type    = 0x1,
+                        ),
+                        service_descriptor_loop_item(
+                            service_ID      = 0xA14, # Accessible TV Guide
+                            service_type    = 0xC,
+                        ),
                     ],
                 ),
                 private_data_specifier_descriptor(
@@ -124,9 +119,9 @@ nit = network_information_section(
                 logical_channel_descriptor(
                     lcn_service_descriptor_loop = [
                         lcn_service_descriptor_loop_item(
-                            service_ID              = 0x1,
+                            service_ID              = 0xE00,
                             visible_service_flag    = 1,
-                            logical_channel_number  = 781,
+                            logical_channel_number  = 300,
                         ),
                         lcn_service_descriptor_loop_item(
                             service_ID              = 0xE01,
@@ -134,27 +129,7 @@ nit = network_information_section(
                             logical_channel_number  = 301,
                         ),
                         lcn_service_descriptor_loop_item(
-                            service_ID              = 0x2051,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 303,
-                        ),
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 0x2,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 782,
-                        ),
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 0xE00,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 300,
-                        ),
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 0x20B5,
-                            visible_service_flag    = 1,
-                            logical_channel_number  = 304,
-                        ),
-                        lcn_service_descriptor_loop_item(
-                            service_ID              = 3586,
+                            service_ID              = 0xE02,
                             visible_service_flag    = 1,
                             logical_channel_number  = 305,
                         ),
@@ -238,22 +213,30 @@ nit = network_information_section(
                             visible_service_flag    = 1,
                             logical_channel_number  = 416,
                         ),
-
+                        lcn_service_descriptor_loop_item(
+                            service_ID              = 0x1,
+                            visible_service_flag    = 1,
+                            logical_channel_number  = 781,
+                        ),
+                        lcn_service_descriptor_loop_item(
+                            service_ID              = 0x2,
+                            visible_service_flag    = 1,
+                            logical_channel_number  = 782,
+                        ),
+                        lcn_service_descriptor_loop_item(
+                            service_ID              = 0xA14,
+                            visible_service_flag    = 1,
+                            logical_channel_number  = 555,
+                        ),
                     ],
                 ),
             ],
-
         ),
-
     ],
-
     version_number = 1,
     section_number = 0,
     last_section_number = 0,
 )
-
-
-
 
 out = open("./tmp/nit.sec", "wb")
 out.write(nit.pack())
