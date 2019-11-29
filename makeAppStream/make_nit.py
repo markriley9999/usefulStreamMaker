@@ -152,6 +152,10 @@ nit = network_information_section(
                             service_ID      = 0xA14, # Accessible TV Guide
                             service_type    = 0xC,
                         ),
+                        service_descriptor_loop_item(
+                            service_ID      = 0x9CE, # Xmas fire service
+                            service_type    = 0x1,
+                        ),
                     ],
                 ),
                 private_data_specifier_descriptor(
@@ -268,6 +272,11 @@ nit = network_information_section(
                             service_ID              = 0xA14,
                             visible_service_flag    = 1,
                             logical_channel_number  = 555,
+                        ),
+                        lcn_service_descriptor_loop_item(
+                            service_ID              = 0x9CE,
+                            visible_service_flag    = 1,
+                            logical_channel_number  = 123,
                         ),
                     ],
                 ),

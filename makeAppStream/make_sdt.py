@@ -323,6 +323,20 @@ sdt = service_description_section(
                 ),
             ],
         ),
+        service_loop_item(
+            service_ID                      = 2510,
+            EIT_schedule_flag               = 0x0,
+            EIT_present_following_flag      = 0x0,
+            running_status                  = 4,
+            free_CA_mode                    = 0,
+            service_descriptor_loop = [
+                service_descriptor(
+                    service_type            = 0x1,
+                    service_provider_name   = "DUK",
+                    service_name            = "Xmas roaring fire",
+                ),
+            ],
+        ),
     ],
     version_number = 1, # you need to change the table number every time you edit, so the decoder will compare its version with the new one and update the table
     section_number = 0,

@@ -102,6 +102,10 @@ pat = program_association_section(
             program_number = 2580,
             PID = 3800,
         ),
+        program_loop_item(
+            program_number = 2510,
+            PID = 2511,
+        ),
     ],
 
     version_number = 1,
