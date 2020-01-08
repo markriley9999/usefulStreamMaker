@@ -25,16 +25,6 @@ pmt = program_map_section(
         program_info_descriptor_loop = [],
         stream_loop = [
             stream_loop_item(
-                stream_type = 5,
-                elementary_PID = int(aitPid),
-                element_info_descriptor_loop = [
-                        application_signalling_descriptor(
-                        application_type = 0x0010,
-                        AIT_version = 1,
-                    ),
-                ]
-            ),
-            stream_loop_item(
                 stream_type = 2, # MPEG2 video stream type
                 elementary_PID = int(videoPid),
                 element_info_descriptor_loop = []

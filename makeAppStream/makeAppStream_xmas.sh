@@ -71,30 +71,30 @@ tsmask ./Suitest_Channel.ts \
 tscbrmuxer \
     c:11435628 tmp/suitest_stripped.ts \
     b:3008 tmp/nit.ts \
-    b:3008 tmp/pat.ts \
-    b:1500 tmp/sdt.ts \
-    b:3008 tmp/pmt1.ts \
-    b:3008 tmp/pmt2.ts \
-    b:3008 tmp/pmt3.ts \
-    b:3008 tmp/pmt-user1.ts \
-    b:3008 tmp/pmt-user2.ts \
-    b:3008 tmp/pmt-user3.ts \
-    b:3008 tmp/pmt-user4.ts \
-    b:3008 tmp/pmt-user5.ts \
-    b:3008 tmp/pmt-user6.ts \
-    b:3008 tmp/pmt-user7.ts \
-    b:3008 tmp/pmt-user8.ts \
-    b:3008 tmp/pmt-user9.ts \
-    b:3008 tmp/pmt-user10.ts \
-    b:3008 tmp/pmt-user11.ts \
-    b:3008 tmp/pmt-user12.ts \
-    b:3008 tmp/pmt-user13.ts \
-    b:3008 tmp/pmt-user14.ts \
-    b:3008 tmp/pmt-user15.ts \
-    b:3008 tmp/pmt-user16.ts \
-    b:3008 tmp/pmt-user16.ts \
-    b:3008 tmp/pmt-atvg.ts \
-    b:3008 tmp/pmt-xmas.ts \
+    b:6016 tmp/pat.ts \
+    b:6016 tmp/sdt.ts \
+    b:6016 tmp/pmt1.ts \
+    b:6016 tmp/pmt2.ts \
+    b:6016 tmp/pmt3.ts \
+    b:6016 tmp/pmt-user1.ts \
+    b:6016 tmp/pmt-user2.ts \
+    b:6016 tmp/pmt-user3.ts \
+    b:6016 tmp/pmt-user4.ts \
+    b:6016 tmp/pmt-user5.ts \
+    b:6016 tmp/pmt-user6.ts \
+    b:6016 tmp/pmt-user7.ts \
+    b:6016 tmp/pmt-user8.ts \
+    b:6016 tmp/pmt-user9.ts \
+    b:6016 tmp/pmt-user10.ts \
+    b:6016 tmp/pmt-user11.ts \
+    b:6016 tmp/pmt-user12.ts \
+    b:6016 tmp/pmt-user13.ts \
+    b:6016 tmp/pmt-user14.ts \
+    b:6016 tmp/pmt-user15.ts \
+    b:6016 tmp/pmt-user16.ts \
+    b:6016 tmp/pmt-user16.ts \
+    b:6016 tmp/pmt-atvg.ts \
+    b:6016 tmp/pmt-xmas.ts \
     b:1400 tmp/ait1.ts \
     b:1400 tmp/ait2.ts \
     b:1400 tmp/ait3.ts \
@@ -118,8 +118,9 @@ tscbrmuxer \
     > output/app_stream.ts
 
 tscbrmuxer \
-      b:5270000 fire_out_ts.ts \
+      b:5270000 owl_5270000.ts \
       b:11435628 output/app_stream.ts \
+      o:18096257 null.ts \
       > output/app_stream_xmas.ts & sleep 10 ; kill $!
 
 rm ./tmp/*.ts

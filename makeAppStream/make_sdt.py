@@ -333,7 +333,7 @@ sdt = service_description_section(
                 service_descriptor(
                     service_type            = 0x1,
                     service_provider_name   = "DUK",
-                    service_name            = "Xmas roaring fire",
+                    service_name            = "Observation video",
                 ),
             ],
         ),

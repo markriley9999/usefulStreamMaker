@@ -14,7 +14,7 @@ from target_region_descriptor import *
 nit = network_information_section(
 	network_id = 12339,
     network_descriptor_loop = [
-	    network_descriptor(network_name = "DUK in-house testing",),
+	    network_descriptor(network_name = "DUKIHTS",),
 		target_region_name_descriptor(
 			ISO_639_language_code = "eng",
 			target_region_name_descriptor_loop = [
@@ -55,7 +55,7 @@ nit = network_information_section(
 			country_code = "GBR",
 		),
 		private_data_specifier_descriptor(private_data_specifier = 0x0000233a,),
-		uri_linkage_descriptor(uri_char = "https://auth.freeviewplay.net",),
+		uri_linkage_descriptor(uri_char = "https://auth-ctv.digitaluk.co.uk",),
     ],
 	transport_stream_loop = [
 	    transport_stream_loop_item(
@@ -153,7 +153,7 @@ nit = network_information_section(
                             service_type    = 0xC,
                         ),
                         service_descriptor_loop_item(
-                            service_ID      = 0x9CE, # Xmas fire service
+                            service_ID      = 0x9CE, # Observation service
                             service_type    = 0x1,
                         ),
                     ],
