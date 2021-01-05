@@ -30,15 +30,31 @@ class target_region_name_descriptor_loop_item(DVBobject):
 
         region_name_length = len(self.region_name)
 
-        fmt = "!BB%dsBBB" % region_name_length
-        return pack(fmt,
-            self.region_depth,
-            region_name_length,
-            self.region_name,
-            self.primary_region_code,
-            self.secondary_region_code,
-            self.tertiary_region_code,
-	    )
+        if self.region_depth == 3:
+            fmt = "!B%dsBBBB" % region_name_length
+            return pack(fmt,
+                (self.region_depth & 0x3) << 6 | (region_name_length & 0x3F),
+                self.region_name,
+                self.primary_region_code,
+                self.secondary_region_code,
+                0,
+                self.tertiary_region_code,
+            )
+        elif self.region_depth == 2:
+            fmt = "!B%dsBB" % region_name_length
+            return pack(fmt,
+                (self.region_depth & 0x3) << 6 | (region_name_length & 0x3F),
+                self.region_name,
+                self.primary_region_code,
+                self.secondary_region_code,
+        	)
+        else:
+            fmt = "!B%dsB" % region_name_length
+            return pack(fmt,
+                (self.region_depth & 0x3) << 6 | (region_name_length & 0x3F),
+                self.region_name,
+                self.primary_region_code,
+    	    )
 
 ####################################################################
 class target_region_name_descriptor(Descriptor):
@@ -66,15 +82,66 @@ class target_region_name_descriptor(Descriptor):
 class target_region_descriptor_loop_item(DVBobject):
 
     def pack(self):
-
-        fmt = "!BBBBB"
-        return pack(fmt,
-            self.reserved,
-            self.country_code_flag,
-            self.region_depth,
-            self.primary_region_code,
-            self.secondary_region_code
-	    )
+        if self.country_code_flag == 0:
+            if self.region_depth == 3:
+                fmt = "!BBBBB"
+                return pack(fmt,
+                    0xF8 | (self.country_code_flag & 0x1) << 2 | (self.region_depth & 0x3),
+                    self.primary_region_code,
+                    self.secondary_region_code,
+                    0,
+                    self.tertiary_region_code
+        	    )
+            elif self.region_depth == 2:
+                fmt = "!BBB"
+                return pack(fmt,
+                    0xF8 | (self.country_code_flag & 0x1) << 2 | (self.region_depth & 0x3),
+                    self.primary_region_code,
+                    self.secondary_region_code
+        	    )
+            elif self.region_depth == 1:
+                fmt = "!BB"
+                return pack(fmt,
+                    0xF8 | (self.country_code_flag & 0x1) << 2 | (self.region_depth & 0x3),
+                    self.primary_region_code
+        	    )
+            else:
+                fmt = "!B"
+                return pack(fmt,
+                    0xF8 | (self.country_code_flag & 0x1) << 2 | (self.region_depth & 0x3)
+        	    )
+        else:
+            if self.region_depth == 3:
+                fmt = "!B3sBBBB"
+                return pack(fmt,
+                    0xF8 | (self.country_code_flag & 0x1) << 2 | (self.region_depth & 0x3),
+                    self.country_code,
+                    self.primary_region_code,
+                    self.secondary_region_code,
+                    0,
+                    self.tertiary_region_code
+        	    )
+            elif self.region_depth == 2:
+                fmt = "!B3sBB"
+                return pack(fmt,
+                    0xF8 | (self.country_code_flag & 0x1) << 2 | (self.region_depth & 0x3),
+                    self.country_code,
+                    self.primary_region_code,
+                    self.secondary_region_code
+        	    )
+            elif self.region_depth == 1:
+                fmt = "!B3sB"
+                return pack(fmt,
+                    0xF8 | (self.country_code_flag & 0x1) << 2 | (self.region_depth & 0x3),
+                    self.country_code,
+                    self.primary_region_code
+        	    )
+            else:
+                fmt = "!B3s"
+                return pack(fmt,
+                    0xF8 | (self.country_code_flag & 0x1) << 2 | (self.region_depth & 0x3),
+                self.country_code
+                )
 
 ####################################################################
 class target_region_descriptor(Descriptor):

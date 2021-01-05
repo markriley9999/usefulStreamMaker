@@ -14,7 +14,7 @@ from target_region_descriptor import *
 nit = network_information_section(
 	network_id = 12339,
     network_descriptor_loop = [
-	    network_descriptor(network_name = "DUK in-house testing",),
+	    network_descriptor(network_name = "DUKIHTS",),
 		target_region_name_descriptor(
 			ISO_639_language_code = "eng",
 			target_region_name_descriptor_loop = [
@@ -45,7 +45,6 @@ nit = network_information_section(
 		target_region_descriptor(
 			target_region_descriptor_loop = [
 				target_region_descriptor_loop_item(
-				reserved = 0x1F,
 				country_code_flag = 0x0,
 				region_depth = 0x02,
 				primary_region_code = 0x01,
@@ -55,7 +54,7 @@ nit = network_information_section(
 			country_code = "GBR",
 		),
 		private_data_specifier_descriptor(private_data_specifier = 0x0000233a,),
-		uri_linkage_descriptor(uri_char = "https://auth.freeviewplay.net",),
+		uri_linkage_descriptor(uri_char = "https://auth-ctv.digitaluk.co.uk",),
     ],
 	transport_stream_loop = [
 	    transport_stream_loop_item(
@@ -149,8 +148,16 @@ nit = network_information_section(
                             service_type    = 0x1,
                         ),
                         service_descriptor_loop_item(
-                            service_ID      = 0xA14, # Accessible TV Guide
+                            service_ID      = 0xA14, # ATVG Dev
                             service_type    = 0xC,
+                        ),
+                        service_descriptor_loop_item(
+                            service_ID      = 0xA1E, # ATVG Stage
+                            service_type    = 0xC,
+                        ),
+                        service_descriptor_loop_item(
+                            service_ID      = 0x9CE, # Observation service
+                            service_type    = 0x1,
                         ),
                     ],
                 ),
@@ -267,7 +274,17 @@ nit = network_information_section(
                         lcn_service_descriptor_loop_item(
                             service_ID              = 0xA14,
                             visible_service_flag    = 1,
-                            logical_channel_number  = 555,
+                            logical_channel_number  = 333,
+                        ),
+                        lcn_service_descriptor_loop_item(
+                            service_ID              = 0xA1E,
+                            visible_service_flag    = 1,
+                            logical_channel_number  = 444,
+                        ),
+                        lcn_service_descriptor_loop_item(
+                            service_ID              = 0x9CE,
+                            visible_service_flag    = 1,
+                            logical_channel_number  = 123,
                         ),
                     ],
                 ),
