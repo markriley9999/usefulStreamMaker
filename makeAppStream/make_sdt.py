@@ -319,7 +319,35 @@ sdt = service_description_section(
                 service_descriptor(
                     service_type            = 0xC,
                     service_provider_name   = "DUK",
-                    service_name            = "Accessible TV Guide",
+                    service_name            = "ATVG - Dev",
+                ),
+            ],
+        ),
+        service_loop_item(
+            service_ID                      = 2590,
+            EIT_schedule_flag               = 0x0,
+            EIT_present_following_flag      = 0x0,
+            running_status                  = 4,
+            free_CA_mode                    = 0,
+            service_descriptor_loop = [
+                service_descriptor(
+                    service_type            = 0xC,
+                    service_provider_name   = "DUK",
+                    service_name            = "ATVG - Stage",
+                ),
+            ],
+        ),
+        service_loop_item(
+            service_ID                      = 2510,
+            EIT_schedule_flag               = 0x0,
+            EIT_present_following_flag      = 0x0,
+            running_status                  = 4,
+            free_CA_mode                    = 0,
+            service_descriptor_loop = [
+                service_descriptor(
+                    service_type            = 0x1,
+                    service_provider_name   = "DUK",
+                    service_name            = "Observation video",
                 ),
             ],
         ),

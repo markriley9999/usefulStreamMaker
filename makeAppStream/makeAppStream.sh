@@ -1,5 +1,7 @@
 #!/bin/bash
 
+video_input=${1:-src/halloween-kitty.ts}
+
 mkdir -p tmp
 mkdir -p output
 
@@ -27,7 +29,9 @@ python ./make_pmt.py "3426" "4013" "pmt-user14"  "3427"
 python ./make_pmt.py "3428" "4014" "pmt-user15"  "3429"
 python ./make_pmt.py "3430" "4015" "pmt-user16"  "3431"
 
-python ./make_pmt.py "3800" "2580" "pmt-atvg" "3801"
+python ./make_pmt.py "2581" "2580" "pmt-atvg-dev" "2585"
+python ./make_pmt.py "2591" "2590" "pmt-atvg-stage" "2595"
+python ./make_pmt_video.py "2511" "2510" "pmt-video" "2513" "2512"
 
 python ./make_nit.py
 
@@ -57,11 +61,12 @@ python ./make_ait.py "3427" "113" "http://ec2-35-176-225-4.eu-west-2.compute.ama
 python ./make_ait.py "3429" "114" "http://ec2-35-176-225-4.eu-west-2.compute.amazonaws.com/" "UserApp15"   "redirect15.html"   "ait-user15"
 python ./make_ait.py "3431" "115" "http://ec2-35-176-225-4.eu-west-2.compute.amazonaws.com/" "UserApp16"   "redirect16.html"   "ait-user16"
 
-python ./make_ait.py "3801" "555" "http://aepg:43pg@aepg.rathermarvellous.com" "ATVG"   ""   "ait-atvg"
+python ./make_ait.py "2585" "3" "http://atvg.dev.freeviewplay.tv/" "ATVG - Dev"   "index.html?nids%5B%5D=65535&lloc=lcn"   "ait-atvg-dev"
+python ./make_ait.py "2595" "4" "http://atvg.stage.freeviewplay.tv/" "ATVG - Stage"   "index.html?nids%5B%5D=65535&lloc=lcn"   "ait-atvg-stage"
 
 
 
-tsmask ./Suitest_Channel.ts \
+tsmask ./src/Suitest_Channel.ts \
     -0 \
     -16 \
     -17 \
@@ -92,7 +97,9 @@ tscbrmuxer \
     b:3008 tmp/pmt-user15.ts \
     b:3008 tmp/pmt-user16.ts \
     b:3008 tmp/pmt-user16.ts \
-    b:3008 tmp/pmt-atvg.ts \
+    b:3008 tmp/pmt-atvg-dev.ts \
+    b:3008 tmp/pmt-atvg-stage.ts \
+    b:6016 tmp/pmt-video.ts \
     b:1400 tmp/ait1.ts \
     b:1400 tmp/ait2.ts \
     b:1400 tmp/ait3.ts \
@@ -112,8 +119,15 @@ tscbrmuxer \
     b:1400 tmp/ait-user14.ts \
     b:1400 tmp/ait-user15.ts \
     b:1400 tmp/ait-user16.ts \
-    b:1400 tmp/ait-atvg.ts \
+    b:1400 tmp/ait-atvg-dev.ts \
+    b:1400 tmp/ait-atvg-stage.ts \
     > output/app_stream.ts
+
+tscbrmuxer \
+      b:5000000 ${video_input} \
+      b:11435628 output/app_stream.ts \
+      o:24096257 null.ts \
+      > output/app_stream_video.ts & sleep 10 ; kill $!
 
 rm ./tmp/*.ts
 
